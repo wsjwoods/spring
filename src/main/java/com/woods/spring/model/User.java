@@ -25,4 +25,12 @@ public class User {
     @Size(min=6,message="密码⻓长度不不能⼩小于6位")
     private String pass;
 
+    public User() {
+    }
+
+    public User(@NotEmpty(message = "姓名不不能为空") String name, @Max(value = 100, message = "年年龄不不能⼤大于100岁") @Min(value = 18, message = "必须年年满18岁！") int age, @NotEmpty(message = "密码不不能为空") @Size(min = 6, message = "密码⻓长度不不能⼩小于6位") String pass) {
+        this.name = name;
+        this.age = age;
+        this.pass = pass;
+    }
 }
